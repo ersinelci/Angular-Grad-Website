@@ -12,23 +12,22 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { MainLayoutComponent } from './shared/main-layout/main-layout.component';
 import { AppRoutingModule } from './app-routing.module';
+import { SharedModule } from './shared/shared.module';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    VisitorComponent,
     HomeComponent,
-    GalleryComponent,
     AboutComponent,
-    AdminLayoutComponent,
-    FooterComponent,
-    HeaderComponent,
-    MainLayoutComponent
+    GalleryComponent,
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-
+    AdminModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
