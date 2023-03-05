@@ -5,8 +5,10 @@ import { MainLayoutComponent } from './shared/main-layout/main-layout.component'
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { GalleryComponent } from './pages/gallery/gallery.component';
-import { VisitorComponent } from './admin/visitor/visitor.component';
+
 import { AdminLayoutComponent } from './shared/admin-layout/admin-layout.component';
+import { VisitorAdminComponent } from './admin/visitor-admin/visitor-admin.component';
+import { VisitorPageComponent } from './pages/visitor-page/visitor-page.component';
 
 
 const routes: Routes = [
@@ -15,13 +17,13 @@ const routes: Routes = [
       {path: 'anasayfa', component: HomeComponent},
       {path: 'hakkimizda', component: AboutComponent},
       {path: 'galeri', component: GalleryComponent},
-      {path: 'ziyaretci-sayfasi', component: VisitorComponent}
+      {path: 'ziyaretci-defteri', component: VisitorPageComponent}
     ]
   },
 
 {
   path: 'admin', component: AdminLayoutComponent, children:  [
-    {path: 'ziyaretci-sayfasi', component: VisitorComponent}
+    {path: 'ziyaretci-kontrol', component: VisitorAdminComponent}
   ]
 }
 ];
