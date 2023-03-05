@@ -1,0 +1,23 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>UserId</th>
+        <th>Title</th>
+        <th>Body</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of postList">
+        <td>{{ p.id }}</td>
+        <td>{{ p.userId }}</td>
+        <td>{{ p.title }}</td>
+        <td>{{ p.body }}</td>
+        <td>
+          <a class="btn btn-primary" [routerLink]="['/posts-comment', p.id,p.body]"
+            >Comment'e Git</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>

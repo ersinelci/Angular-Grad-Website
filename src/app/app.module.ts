@@ -14,6 +14,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 import { AdminModule } from './admin/admin.module';
 import { VisitorPageComponent } from './pages/visitor-page/visitor-page.component';
+import { UsersAdminComponent } from './admin/users-admin/users-admin.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,14 +23,17 @@ import { VisitorPageComponent } from './pages/visitor-page/visitor-page.componen
     HomeComponent,
     AboutComponent,
     GalleryComponent,
-    VisitorPageComponent
+    VisitorPageComponent,
+    UsersAdminComponent
   
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     AdminModule,
-    SharedModule
+    SharedModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
