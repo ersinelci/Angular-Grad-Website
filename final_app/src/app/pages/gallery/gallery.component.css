@@ -1,25 +1,15 @@
-/* .carousel-item{
-  width: auto;
-  height: 100%;
-  background-color: #ffffff;
-  text-align: center;
-  display: table-cell;
-  vertical-align: middle;
-} */
- .carousel-inner{
+.carousel-inner{
  max-height: 500px
 }
 .carousel-inner img {
   margin: auto;
   max-width: 750px;
-
-  
 } 
 
 /* Set the height of the carousel */
 /* Style for the carousel */
 .carousel-item img {
-  height: 500px;
+  margin: auto;
   object-fit: cover;
   top:20px;
 }
@@ -39,34 +29,6 @@
   background-color: #040404;
 }
 
-/* Style for the header */
-.navbar-brand {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.nav-link {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-/* Style for the footer */
-.text-muted {
-  font-size: 14px;
-}
-
-
-/* img {
-  
-  
-  transform: translate(0%, 0%);
-  min-width: 100%;
-  height: 40rem;
-  margin: 0 auto;
-  
- 
-} */
-
 .carousel {
     display:flex;
     flex-direction:row;
@@ -76,12 +38,3 @@
     top:110px;
 }
 
-/* .carousel-item > img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 100%;
-  height: 40rem;
-  margin: 0 auto;
-} */
