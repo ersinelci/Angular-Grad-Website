@@ -12,6 +12,7 @@
   margin: auto;
   object-fit: cover;
   top:20px;
+  border-radius: 0%;
 }
 
 /* Style for the carousel indicators */
