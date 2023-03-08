@@ -4,7 +4,7 @@ import { VisitorAdminComponent } from './visitor-admin/visitor-admin.component';
 import { PostsAdminComponent } from './posts-admin/posts-list/posts-admin.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { PostCommentComponent } from './posts-admin/post-comment/post-comment.component';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from '../app-routing.module';
 
@@ -19,7 +19,7 @@ import { AppRoutingModule } from '../app-routing.module';
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
   ]
 })
 export class AdminModule { }
