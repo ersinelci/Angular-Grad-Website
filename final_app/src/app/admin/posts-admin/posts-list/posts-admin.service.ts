@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Post } from './post';
-import { PostsComment } from './posts-comment';
+import { Post } from '../../../models/post';
+import { PostsComment } from '../../../models/posts-comment';
 
 @Injectable({
   providedIn: 'root',

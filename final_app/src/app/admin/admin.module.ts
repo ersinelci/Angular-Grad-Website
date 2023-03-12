@@ -7,6 +7,8 @@ import { PostCommentComponent } from './posts-admin/post-comment/post-comment.co
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from '../app-routing.module';
+import { UserDetailComponent } from './user-detail/user-detail.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -15,11 +17,14 @@ import { AppRoutingModule } from '../app-routing.module';
     VisitorAdminComponent,
     PostsAdminComponent,
     AdminHomeComponent,
-    PostCommentComponent
+    PostCommentComponent,
+    UserDetailComponent
   ],
   imports: [
     CommonModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AdminModule { }

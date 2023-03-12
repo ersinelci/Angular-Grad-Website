@@ -1,1 +1,133 @@
-<p>visitor-page works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-9 offset-md-3 mt-3">
+      <form [formGroup]="visitorForm" (ngSubmit)="save()">
+        <div class="form-group">
+          <label for="exampleInputPassword1">İsim</label>
+          <input type="text" class="form-control" name="name" placeholder="Ad-Soyad" formControlName="name">
+          <div class="form-text text-danger">
+            <div *ngIf="isInvalid('name')">
+              <div *ngIf="isInvalidControl('name', 'required')">
+                Bu alan boş bırakılamaz
+              </div>
+
+              <div *ngIf="
+                  isInvalidControl('name', 'minlength') ||
+                  isInvalidControl('name', 'maxlength')
+                ">
+                En az 5 karakter girilmelidir.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3 ">
+          <label class="form-label">E-mail</label>
+          <input [ngClass]="{'input-danger' : isInvalid('email')}" formControlName="email" type="text" class="form-control" placeholder="Email" />
+          <div class="form-text text-danger">
+            <div *ngIf="isInvalid('email')">
+              <div *ngIf="isInvalidControl('email', 'required')">
+                Email alanı boş bırakılamaz.
+              </div>
+              <div *ngIf="isInvalidControl('email', 'emailFormat')">
+                Email formatı doğru değil.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputPassword1">İçerik</label>
+          <input type="text" class="form-control" name="content" placeholder="İçerik" formControlName="content">
+          <div class="form-text text-danger">
+            <div *ngIf="isInvalid('content')">
+              <div *ngIf="isInvalidControl('content', 'required')">
+                İçerik girilmelidir.
+              </div>
+
+              <div *ngIf="
+                  isInvalidControl('content', 'minlength') ||
+                  isInvalidControl('content', 'maxlength')
+                ">
+                Bu alana en az 50 karakter girilmelidir.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Doğum Tarihi</label>
+          <input type="date" class="form-control" name="birthDate" placeholder="Birth-Date"
+            formControlName="birthDate">
+          <div class="form-text text-danger">
+            <div *ngIf="isInvalid('birthDate')">
+              <div *ngIf="isInvalidControl('birthDate', 'required')">
+                Doğum Tarihi bilgisi girilmelidir.
+              </div>
+              <div *ngIf="isInvalidControl('birthDate', 'birthdateFormat')">
+                Yaş 16'dan küçük olamaz.
+              </div>
+            </div>
+          </div>
+        </div>
+        <label>Yayınlanma Süresi: </label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="publishDateExpire" id="exampleRadios1" value="1"
+            formControlName="publishDateExpire" checked>
+          <label class="form-check-label" for="exampleRadios1">
+            1 Ay
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="publishDateExpire" id="exampleRadios2" value="3" checked
+            formControlName="publishDateExpire">
+          <label class="form-check-label" for="exampleRadios2">
+            3 Ay
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="publishDateExpire" id="exampleRadios3" value="6"
+            formControlName="publishDateExpire">
+          <label class="form-check-label" for="exampleRadios3">
+            6 Ay
+          </label>
+        </div>
+        <div class="form-group">
+          <label for="inputState">İçerik Türü</label>
+          <select id="inputState" class="form-control" name="reviewType" formControlName="reviewType">
+            <option value="" selected>Seçiniz</option>
+            <option value="Review">Eleştiri</option>
+            <option value="Suggestion">Öneri</option>
+          </select>
+          <div class="form-text text-danger">
+            <div *ngIf="isInvalid('reviewType')">
+              <div *ngIf="isInvalidControl('reviewType', 'required')">
+                Lütfen İçerik Tipini Seçiniz.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-3">Gönder</button>
+      </form>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">İsim</th>
+            <th scope="col">E-Mail</th>
+            <th scope="col">İçerik</th>
+            <th scope="col">Doğum Tarihi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let visitor of visitorService.filterConfirm()">
+            <td>{{visitor?.name}}</td>
+            <td>{{visitor?.email}}</td>
+            <td>{{visitor?.content}}</td>
+            <td>{{visitor?.birthDate}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

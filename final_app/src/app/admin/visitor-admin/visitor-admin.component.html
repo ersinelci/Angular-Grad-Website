@@ -1,1 +1,28 @@
-<p>visitor-admin works!</p>
+<table class="table">
+    <thead>
+      <tr>
+        <th>İsim</th>
+        <th>E-mail</th>
+        <th>İçerik</th>
+        <th>Doğum Tarihi</th>
+        <th>Yayınlanma</th>
+        <th>İçerik Tipi</th>
+        <th>İşlemler</th>
+        <th>Onayla</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-text" *ngFor="let visitor of visitorService.visitors">
+        <th>{{ visitor?.name }}</th>
+        <th>{{ visitor?.email }}</th>
+        <th>{{ visitor?.content }}</th>
+        <th>{{ visitor?.birthDate }}</th>
+        <th>{{ visitor?.publishExpire }}</th>
+        <th>{{ visitor?.reviewType }}</th>
+        <button type="button" class="btn btn-outline-danger" (click)="visitorService.deleteVisitor(visitor.email)">Sil</button>
+        <label for="">Confirm</label>
+        <input type="checkbox" [(ngModel)]="isChecked" (change)="checkValue(isChecked? visitor.isConfirmed = true : visitor.isConfirmed = false)" [disabled]=" visitor.isConfirmed" >
+        <th>{{ visitor?.isConfirmed }}</th>
+      </tr>
+    </tbody>
+  </table>

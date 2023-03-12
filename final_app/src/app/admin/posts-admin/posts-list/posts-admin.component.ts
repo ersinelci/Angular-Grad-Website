@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { Post } from '../../../models/post';
-import { PostService } from '../../../models/posts-admin.service';
+import { PostService } from './posts-admin.service';
 
 @Component({
   selector: 'app-posts-admin',

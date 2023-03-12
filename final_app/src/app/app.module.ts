@@ -16,6 +16,7 @@ import { AdminModule } from './admin/admin.module';
 import { VisitorPageComponent } from './pages/visitor-page/visitor-page.component';
 import { UsersAdminComponent } from './admin/users-admin/users-admin.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     AdminModule,
     SharedModule,
+    FormsModule,
+    ReactiveFormsModule
    
   ],
   providers: [],

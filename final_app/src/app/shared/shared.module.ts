@@ -5,6 +5,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { AdminLayoutComponent } from './admin-layout/admin-layout.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -18,11 +19,14 @@ import { MainLayoutComponent } from './main-layout/main-layout.component';
   exports: [
     HeaderComponent,
     FooterComponent,
+    ReactiveFormsModule,
+    FormsModule
   
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
   ]
 })
 export class SharedModule { }

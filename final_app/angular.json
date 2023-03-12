@@ -26,10 +26,10 @@
             ],
             "styles": [
               "src/styles.css",
-              "bootstrap/dist/css/bootstrap.min.css"
+              "bootstrap/dist/css/bootstrap.css"
             ],
             "scripts": [
-              "bootstrap/dist/js/bootstrap.js"
+              
             ]
           },
           "configurations": {

@@ -13,6 +13,7 @@ import { PostsAdminComponent } from './admin/posts-admin/posts-list/posts-admin.
 import { UsersAdminComponent } from './admin/users-admin/users-admin.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { PostCommentComponent } from './admin/posts-admin/post-comment/post-comment.component';
+import { UserDetailComponent } from './admin/user-detail/user-detail.component';
 
 
 const routes: Routes = [
@@ -30,6 +31,7 @@ const routes: Routes = [
     {path: 'ziyaretci-kontrol', component: VisitorAdminComponent},
     {path: 'posts-list',component: PostsAdminComponent},
     {path: 'posts-comment/:id', component: PostCommentComponent},
+    {path: 'users-detail/:id', component: UserDetailComponent},
     {path: 'users-admin',component: UsersAdminComponent},
     {path: 'home',component:AdminHomeComponent}
   ]
